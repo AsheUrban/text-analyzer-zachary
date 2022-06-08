@@ -12,12 +12,15 @@ function noInputtedWord() {
 //Buisiness Logic
 
 function pigLatinTranslator(text) {
+  if (noInputtedWord(text)) {
+    return 0;
+  }
   const english = text.split(" ");
   let currentWord = " ";
   let translation = [];
   let capital = 0;
   english.forEach(function(element) {
-    if(startsWith(element)){
+    if(startsWith(element)) {
       currentWord = element + "w";
     }
     else if(element.charAt(0).toLowerCase() === "q" && element.charAt(1).toLowerCase() === "u") {
@@ -41,9 +44,9 @@ function notVowel(word) {
   const vowels = ["a", "e", "i", "o", "u", "q"];
   let constStr = "";
   let stop = 0;
-    for (let letter = 0; letter < word.length && stop === 0; letter++){
+    for (let letter = 0; letter < word.length && stop === 0; letter++) {
       for (let vowel = 0; vowel < 6; vowel++){
-        if (word.charAt(letter).toLowerCase() === vowels[vowel]){
+        if (word.charAt(letter).toLowerCase() === vowels[vowel]) {
           stop = 1;   
       }}
       if(stop === 0) {
@@ -54,12 +57,12 @@ function notVowel(word) {
 
 function startsWith(word) {
   const vowels = ["a", "e", "i", "o", "u"];
-  for (let i = 0; i < 5; i++){
+  for (let i = 0; i < 5; i++) {
       if (word.charAt(0).toLowerCase() === vowels[i]) {
         return true;
         break;
       }
-      else{
+      else {
       }
   }
   return false;
