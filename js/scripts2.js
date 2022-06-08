@@ -14,6 +14,8 @@ function noInputtedWord() {
 function pigLatinTranslator(text) {
   const english = text.split(" ");
   let currentWord = " ";
+  let translation = [];
+  let capital = 0;
   english.forEach(function(element) {
     if(startsWith(element)){
       currentWord = element + "w";
@@ -22,10 +24,17 @@ function pigLatinTranslator(text) {
       currentWord = element.slice(2) + "qu";
     }
     else {
+      let prefix = notVowel(element);
+      currentWord = element.slice(prefix.length) + prefix;
     }
-    console.log(currentWord);
-    return currentWord;
+    if (capital === 0) {
+      currentWord = currentWord.charAt(0).toUpperCase() + currentWord.slice(1);
+      capital = 1;
+    }
+    currentWord += "ay";
+    translation.push(currentWord);
   });
+  return translation.join(" ") + ".";
 }
 
 function notVowel(word) {
@@ -35,14 +44,11 @@ function notVowel(word) {
     for (let letter = 0; letter < word.length && stop === 0; letter++){
       for (let vowel = 0; vowel < 6; vowel++){
         if (word.charAt(letter).toLowerCase() === vowels[vowel]){
-          stop = 1;
-        }
-      }
+          stop = 1;   
+      }}
       if(stop === 0) {
         constStr += word.charAt(letter);
-      }
-    }
-    console.log(constStr);
+    }}
     return constStr;
 }
 
