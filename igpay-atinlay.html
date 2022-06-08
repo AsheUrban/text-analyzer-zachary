@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <title>Text Analyzer</title>
+  <title>Pig Translate</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/scripts2.js"></script>
 </head>
 <body>
+  <header class="bar1">
+    <h4><span class="blue">P</span><span class="red">i</span><span class="green">g</span> <span class="grey">Translate</span></h4>
+
+  </header>
+  <form id="pigLatin">
+  <header class="bar2">
+    <button type="submit" class="btn btn-success"><b>Translate!</b></button>
+    Google translate didn't have Pig Latin, so we made it:
+  </header>
   <div class="container">
-    <form id="pigLatin">
-      <div class="form-group"></div>
-      <p>Google translate didn't have Pig Latin, so we made it:</p>
-      <textarea id="text-passage" name="text-passage" class="form-control"></textarea>
-      <button type="submit" class="btn btn-success">Translate!</button>
-    </form>
-  </div>
-  <div class="container">
-    <p>Translation: <span id="output"></span></p>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group"></div>
+          <textarea id="text-passage" name="text-passage" class="form-control"></textarea>
+        </div>
+      </form>
+      <div class="col-6">
+      <p>Translation: </p>
+      <p><span id="output"></span></p>
+    </div>
+    </div>
   </div>
 </body>
 </html>

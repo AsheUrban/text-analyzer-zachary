@@ -1,0 +1,65 @@
+.bar1 {
+  height: 64px;
+  padding: 12px;
+}
+
+.bar2 {
+  background-color: #fafafa;
+  height: 57px;
+  padding: 5px;
+  color: rgb(25, 103, 210);
+  border-top: solid;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: #e0e0e0;
+}
+
+.btn-success {
+  background-color: #fafafa;
+  color: #1967d2;
+  border-color: #dadce0;
+}
+
+.btn-success:hover {
+  background-color: #f1f5f9;
+  color: #3968b3;
+  border-color: #dadce0;
+}
+
+.row {
+  margin: 0px;
+  padding: 0px;
+  border: solid;
+  border-width: 1px;
+  border-color: #e0e0e0;
+  border-radius: 0.2rem;
+}
+
+.form-control {
+padding: 0px;
+}
+
+.col-6 {
+  padding: 0px;
+}
+
+textarea {
+  padding: 0px;
+  margin: 0px;
+}
+
+.blue {
+  color: #4285f4;
+}
+
+.red {
+  color: #ea4335;
+}
+
+.green {
+  color: #34a853;
+}
+
+.grey {
+  color: #5f6368;
+}
