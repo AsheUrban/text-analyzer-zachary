@@ -37,22 +37,8 @@ function pigLatinTranslator(text) {
     currentWord += "ay";
     translation.push(currentWord);
   });
+  console.log(translation.join(" "), ".")
   return translation.join(" ") + ".";
-}
-
-function notVowel(word) {
-  const vowels = ["a", "e", "i", "o", "u", "q"];
-  let constStr = "";
-  let stop = 0;
-    for (let letter = 0; letter < word.length && stop === 0; letter++) {
-      for (let vowel = 0; vowel < 6; vowel++){
-        if (word.charAt(letter).toLowerCase() === vowels[vowel]) {
-          stop = 1;   
-      }}
-      if(stop === 0) {
-        constStr += word.charAt(letter);
-    }}
-    return constStr;
 }
 
 function startsWith(word) {
@@ -68,4 +54,27 @@ function startsWith(word) {
   return false;
 }
 
+function notVowel(word) {
+  const vowels = ["a", "e", "i", "o", "u", "q"];
+  let constStr = "";
+  let stop = 0;
+    for (let letter = 0; letter < word.length && stop === 0; letter++) {
+      for (let vowel = 0; vowel < 6; vowel++){
+        if (word.charAt(letter).toLowerCase() === vowels[vowel]) {
+          stop = 1;
+      }}
+      if(stop === 0) {
+        constStr += word.charAt(letter);
+    }}
+    return constStr;
+}
 //UI Logic
+$(document).ready(function(){
+  $("form#pigLatin").submit(function(event){
+    event.preventDefault();
+    const translateInput = $("#text-passage").val();
+    console.log(translateInput);
+    console.log(pigLatinTranslator(translateInput));
+    $("#output").html(pigLatinTranslator(translateInput));
+  });
+});
