@@ -98,7 +98,7 @@ function frequencyInText(word, text) { // a function that removes all duplicate 
   //return string with HTML Brackets
 }                           //**//end of function\\**\\
 
-function removeOffensiveLanguage(words, text) { //replaces words zoinks, muppeteer, biffaroni, and loopdaloop with ******
+function removeOffensiveLanguage(text) { //replaces words zoinks, muppeteer, biffaroni, and loopdaloop with ******
   const wordArray = text.split(" ");
   let i = 0;
   wordArray.forEach(function(element) {
