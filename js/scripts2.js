@@ -10,4 +10,22 @@ function noInputtedWord() {
 }
 //Buisiness Logic
 
+function pigLatinTranslator(text) {
+  const pigLatin = text.split(" ");
+  
+}
+
+function startsWith(word) {
+  const vowels = ["a", "e", "i", "o", "u"];
+  for (let i = 0; i < 5; i++){
+      if (word.charAt(0).toLowerCase() === vowels[i]) {
+        return true;
+        break;
+      }
+      else{
+      }
+  }
+  return false;
+}
+
 //UI Logic
