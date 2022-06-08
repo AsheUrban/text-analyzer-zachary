@@ -11,8 +11,20 @@ function noInputtedWord() {
 //Buisiness Logic
 
 function pigLatinTranslator(text) {
-  const pigLatin = text.split(" ");
-  
+  const english = text.split(" ");
+  let currentWord = " ";
+  english.forEach(function(element) {
+    if(startsWith(element)){
+      currentWord = element + "w";
+    }
+    else if(element.charAt(0).toLowerCase() === "q" && element.charAt(1).toLowerCase() === "u") {
+      currentWord = element.slice(2) + "qu";
+    }
+    else {
+    }
+    console.log(currentWord);
+    return currentWord;
+  });
 }
 
 function startsWith(word) {
