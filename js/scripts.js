@@ -1,13 +1,18 @@
 // Utility Logic
 
-function noInputtedWord(word, text) {//checks if input is empty (prevents errors)
-  return ((text.trim().length === 0) || (word.trim().length === 0));
+function noInputtedWord() {
+  for (let i=0; i < arguments.length; i++) {
+    if (arguments[i].trim().length === 0) {
+      return true;
+    }
+  }
+  return false;
 }
 
 // Buisness Logic
 
 function wordCounter(text) {// gives total word count, excluding spaces
-  if (text.trim().length === 0) {
+  if (noInputtedWord(text)) {
     return 0;
   }
   let wordCount = 0;
@@ -18,6 +23,17 @@ function wordCounter(text) {// gives total word count, excluding spaces
     }
   });
   return wordCount;
+}
+
+function firstInstanceOfWord(word, text) {
+  const textArray = text.split(" ");
+  for (let i = 0; i < textArray.length; i++) {
+    console.log(i);
+    if (word === textArray[i]) {
+      return i;
+    }
+  }
+  return -1;
 }
 
 function numberOfOccurrencesInText(word, text) { //counts the number of times -word- has appeared in -text- and returns that number
