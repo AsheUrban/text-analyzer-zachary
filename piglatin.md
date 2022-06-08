@@ -12,17 +12,17 @@ const text = "away";
 pigLatinTranslator(text);
 Expected Output: awayw
 
-Test: "It should move constanants to the end of string"
-Code:
-const text = "strange";
-pigLatinTranslator(text);
-Expected Output: angestr
-
 Test: "It should detect if first letters are qu, then move qu to end"
 Code:
 const text = "quack";
 pigLatinTranslator(text);
 Expected Output: ackqu
+
+Test: "It should move constanants to the end of string"
+Code:
+const text = "strange";
+notVowel(word);
+Expected Output: angestr
 
 Test: "It should add ay to the end"
 Code:

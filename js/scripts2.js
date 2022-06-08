@@ -8,6 +8,7 @@ function noInputtedWord() {
   }
   return false;
 }
+
 //Buisiness Logic
 
 function pigLatinTranslator(text) {
@@ -25,6 +26,24 @@ function pigLatinTranslator(text) {
     console.log(currentWord);
     return currentWord;
   });
+}
+
+function notVowel(word) {
+  const vowels = ["a", "e", "i", "o", "u", "q"];
+  let constStr = "";
+  let stop = 0;
+    for (let letter = 0; letter < word.length && stop === 0; letter++){
+      for (let vowel = 0; vowel < 6; vowel++){
+        if (word.charAt(letter).toLowerCase() === vowels[vowel]){
+          stop = 1;
+        }
+      }
+      if(stop === 0) {
+        constStr += word.charAt(letter);
+      }
+    }
+    console.log(constStr);
+    return constStr;
 }
 
 function startsWith(word) {
