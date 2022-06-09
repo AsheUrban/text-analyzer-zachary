@@ -1,3 +1,7 @@
+:root{
+  --success: #4e84ee;
+}
+
 .bar1 {
   height: 64px;
   padding: 12px;
@@ -15,15 +19,34 @@
 }
 
 .btn-success {
-  background-color: #fafafa;
   color: #1967d2;
+  background-color: #fafafa;
   border-color: #dadce0;
 }
 
-.btn-success:hover {
-  background-color: #f1f5f9;
+.btn-success:hover, .btn-success.disabled, .btn-success:disabled {
   color: #3968b3;
+  background-color: #f1f5f9;
   border-color: #dadce0;
+}
+
+.btn-success:focus, .btn-success.focus {
+  color: #1967d2;
+  background-color: #fafafa;
+  border-color: #dadce0;
+}
+
+
+.btn-success:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active,
+.show > .btn-success.dropdown-toggle {
+  color: #3968b3;
+  background-color: #f1f5f9;
+  border-color: #dadce0;
+}
+
+.btn-success:not(:disabled):not(.disabled):active:focus, .btn-success:not(:disabled):not(.disabled).active:focus,
+.show > .btn-success.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.1rem #c9dbf8;
 }
 
 .row {
@@ -33,6 +56,7 @@
   border-width: 1px;
   border-color: #e0e0e0;
   border-radius: 0.4rem;
+  box-shadow: 0 0 0 0.1rem rgba(104, 200, 255, 0.164);
 }
 
 .form-control {
